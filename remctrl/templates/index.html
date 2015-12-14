@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="/static/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+<h3>Playlists</h3>
+<button id="logo" class="btn btn-default btn-lg">Logo</button>
+
+<button id="attractmode" class="btn btn-default btn-lg">Attract Mode</button>
+<!--
+<hr>
+<h3>Restart XBMC</h3>
+<button id="reboot" class="btn btn-danger btn-lg">Restart XBMC</button>
+-->
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4){
+      
+    }
+};
+
+
+
+
+buttons = document.querySelectorAll("button")
+
+for (var i =0; i < buttons.length; i++) {
+
+    b = buttons[i];
+    b.addEventListener('click', function(e) {
+        
+        var pl = e.target.id;
+        xhr.open('GET', pl, true);
+        xhr.send(null);  
+
+    });
+}
+
+</script>
+</body>
+</html>

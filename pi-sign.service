@@ -1,0 +1,11 @@
+[Unit]
+Description=display control
+After=network.target
+
+[Service]
+User=osmc
+WorkingDirectory=/home/osmc/pi_sign/remctrl
+ExecStart=/usr/local/bin/gunicorn -w 3 -b 0.0.0.0:8000 app:app
+
+[Install]
+WantedBy=multi-user.target
